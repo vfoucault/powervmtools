@@ -1,0 +1,2 @@
+gemfile:
+  - gemfiles/Gemfile.rails-2.3.x
