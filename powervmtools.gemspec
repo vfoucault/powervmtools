@@ -8,5 +8,5 @@ Gem::Specification.new do |s|
   s.email       = 'vianney.foucault@gmail.com'
   s.files       = `git ls-files -z`.split("\x0")
   s.homepage    = ''
-  s.license     = 'MIT'
+  s.license     = 'Apache 2.0'
 end
