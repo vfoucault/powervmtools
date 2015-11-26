@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Class: PowerVMTools::Vios</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/vios_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/vios.rb">lib/vios.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="Lpar.html">PowerVMTools::Lpar</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-cfgdev">#cfgdev</a></li>
+          
+          <li><a href="#method-i-createmapping">#createmapping</a></li>
+          
+          <li><a href="#method-i-get_hdisk_bible">#get_hdisk_bible</a></li>
+          
+          <li><a href="#method-i-getvadaptername">#getvadaptername</a></li>
+          
+          <li><a href="#method-i-getvfcmap">#getvfcmap</a></li>
+          
+          <li><a href="#method-i-mappings">#mappings</a></li>
+          
+          <li><a href="#method-i-mkfcmap">#mkfcmap</a></li>
+          
+          <li><a href="#method-i-networks">#networks</a></li>
+          
+          <li><a href="#method-i-removemapping">#removemapping</a></li>
+          
+          <li><a href="#method-i-rmdev">#rmdev</a></li>
+          
+          <li><a href="#method-i-run_command">#run_command</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../PowerVMTools.html">PowerVMTools</a></li>
+        
+          <li><a href="../PowerVMTools/Common.html">PowerVMTools::Common</a></li>
+        
+          <li><a href="../PowerVMTools/Error.html">PowerVMTools::Error</a></li>
+        
+          <li><a href="../PowerVMTools/Error/CustomError.html">PowerVMTools::Error::CustomError</a></li>
+        
+          <li><a href="../PowerVMTools/Error/PowerStateError.html">PowerVMTools::Error::PowerStateError</a></li>
+        
+          <li><a href="../PowerVMTools/Frame.html">PowerVMTools::Frame</a></li>
+        
+          <li><a href="../PowerVMTools/HMC.html">PowerVMTools::HMC</a></li>
+        
+          <li><a href="../PowerVMTools/Lpar.html">PowerVMTools::Lpar</a></li>
+        
+          <li><a href="../PowerVMTools/NIM.html">PowerVMTools::NIM</a></li>
+        
+          <li><a href="../PowerVMTools/Vios.html">PowerVMTools::Vios</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">PowerVMTools::Vios</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="frame-attribute-method" class="method-detail">
+          <a name="frame"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">frame</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="id-attribute-method" class="method-detail">
+          <a name="id"></a>
+          
+          <a name="id="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">id</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="name-attribute-method" class="method-detail">
+          <a name="name"></a>
+          
+          <a name="name="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">name</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(name, options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>This method initialize a new VIO Object.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/vios.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">name</span>,<span class="ruby-identifier">options</span>)
+  <span class="ruby-ivar">@log</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDOUT</span>)
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:frame</span>].<span class="ruby-identifier">debug</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-ivar">@debug</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
+  <span class="ruby-keyword">end</span>       
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;New VIOs instance #{name}&quot;</span>) 
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="cfgdev-method" class="method-detail ">
+          <a name="method-i-cfgdev"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cfgdev</span><span
+              class="method-args">(*dev)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Execute the cfgdev command on this vio. the optional “dev” argument is used
+to specified the root device  to initiate the cfgdev from.</p>
+            
+
+            
+            <div class="method-source-code" id="cfgdev-source">
+<pre>
+<span class="ruby-comment"># File lib/vios.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cfgdev</span>(*<span class="ruby-identifier">dev</span>)
+  <span class="ruby-comment">## will run the cfgdev command on the vios</span>
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Running 'cfgdev' on #{self.name}&quot;</span>)
+  <span class="ruby-identifier">optargs</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">optargs</span> = <span class="ruby-node">&quot;-dev #{dev[0]}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">dev</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;cfgdev #{optargs}&quot;</span>
+  <span class="ruby-identifier">output</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">output</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- cfgdev-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cfgdev-method -->
+
+      
+        <div id="createmapping-method" class="method-detail ">
+          <a name="method-i-createmapping"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">createmapping</span><span
+              class="method-args">(device,vadapter,options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Will create the vscsi mapping for the specified devices with options : 
+device =&gt; the device for create the mapping for vadapter =&gt; the
+vadpater to create the mapping on options : { :force =&gt; True/False,</p>
+
+<pre>:vtdname =&gt; the vtdname}</pre>
+            
+
+            
+            <div class="method-source-code" id="createmapping-source">
+<pre>
+<span class="ruby-comment"># File lib/vios.rb, line 258</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">createmapping</span>(<span class="ruby-identifier">device</span>,<span class="ruby-identifier">vadapter</span>,<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:vtdname</span>] 
+      <span class="ruby-identifier">vtdname</span> = <span class="ruby-node">&quot;-dev #{options[:vtdname]}&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:force</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">force</span> = <span class="ruby-string">&quot;-f&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Creating mapping #{device}/#{vadapter} on #{self.name}&quot;</span>)
+    <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;mkvdev #{force} -vdev #{device} -vadapter #{vadapter} #{vtdname}&quot;</span>
+    <span class="ruby-identifier">output</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CustomError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">e</span>.<span class="ruby-identifier">handle</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- createmapping-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- createmapping-method -->
+
+      
+        <div id="get_hdisk_bible-method" class="method-detail ">
+          <a name="method-i-get_hdisk_bible"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get_hdisk_bible</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Will populate the attribut hdisk_bible with a Array of Hashes. Array = [{
+:name =&gt; “hdisk10”,</p>
+
+<pre>:sernum =&gt; &quot;17B43&quot;,  
+:ldev =&gt; &quot;0218&quot;,
+:pvid =&gt; &quot;hdisk pvid or none&quot;
+:vtd =&gt; &quot;The VTD name if mapped&quot;. }]</pre>
+
+<p>This work so far only for Hitachi VSP Arrays, But can easily implement
+other storage array</p>
+            
+
+            
+            <div class="method-source-code" id="get_hdisk_bible-source">
+<pre>
+<span class="ruby-comment"># File lib/vios.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_hdisk_bible</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@hdisk_bible</span>
+    <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Getting hdisk bible on #{self.name}&quot;</span>) 
+    <span class="ruby-ivar">@hdisk_bible</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Updating hdisk bible on #{self.name}&quot;</span>) 
+    <span class="ruby-identifier">command</span> = <span class="ruby-string">&quot;chkdev -verbose -field name identifier pvid vtd -fmt :&quot;</span>
+    <span class="ruby-identifier">output</span> = <span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+    <span class="ruby-ivar">@hdisk_bible</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">regexp_devices</span> = <span class="ruby-regexp">/^(\w+):\w+\s(\w{5})(\w{4}).{20}:(\w{4,16}):?0{0,16}:(\w+)?/</span> <span class="ruby-comment">### regexp that parse hitachi devices</span>
+    <span class="ruby-identifier">ref_devices</span> = <span class="ruby-identifier">output</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-identifier">regexp_devices</span>)
+    <span class="ruby-identifier">ref_devices</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">entry</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">hash</span> = { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">entry</span>[<span class="ruby-value">0</span>],
+               <span class="ruby-value">:sernum</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">entry</span>[<span class="ruby-value">1</span>],
+               <span class="ruby-value">:ldev</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">entry</span>[<span class="ruby-value">2</span>],
+               <span class="ruby-value">:pvid</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">entry</span>[<span class="ruby-value">3</span>],
+               <span class="ruby-value">:vtd</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">entry</span>[<span class="ruby-value">4</span>]}
+      <span class="ruby-ivar">@hdisk_bible</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">hash</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@hdisk_bible</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- get_hdisk_bible-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- get_hdisk_bible-method -->
+
+      
+        <div id="getvadaptername-method" class="method-detail ">
+          <a name="method-i-getvadaptername"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getvadaptername</span><span
+              class="method-args">(adap_id)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Will return the device name for the specifed adap_id uses the attribute
+vadapters</p>
+            
+
+            
+            <div class="method-source-code" id="getvadaptername-source">
+<pre>
+<span class="ruby-comment"># File lib/vios.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getvadaptername</span>(<span class="ruby-identifier">adap_id</span>)
+  <span class="ruby-comment">## return the vhost adapter name (eg: vhost5) from the VIOS</span>
+  <span class="ruby-identifier">vadaptername</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@vadpaters</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">getvadapters</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">entry</span> = <span class="ruby-ivar">@vadapters</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>[<span class="ruby-value">:said</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">adap_id</span> }
+  <span class="ruby-identifier">vadaptername</span> = <span class="ruby-identifier">entry</span>[<span class="ruby-value">0</span>][<span class="ruby-value">:dev</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Getting vadapter device name for #{adap_id}=&gt;#{vadaptername} on #{self.name}&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">vadaptername</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- getvadaptername-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getvadaptername-method -->
+
+      
+        <div id="getvfcmap-method" class="method-detail ">
+          <a name="method-i-getvfcmap"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getvfcmap</span><span
+              class="method-args">(vfchost)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Will return a Hash made of the vfcmap for the specified vfchost Hash =
+{“status” =&gt; status,</p>
+
+<pre>&quot;fcname&quot; =&gt; fcname,
+&quot;physloc&quot; =&gt; physloc,
+&quot;portstatus&quot; =&gt; portsli,
+&quot;flags&quot; =&gt; flags,
+&quot;clntfcname&quot; =&gt; clntfcname}</pre>
+            
+
+            
+            <div class="method-source-code" id="getvfcmap-source">
+<pre>
+<span class="ruby-comment"># File lib/vios.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getvfcmap</span>(<span class="ruby-identifier">vfchost</span>)
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Getting vfc mapping for #{vfchost} on #{self.name}&quot;</span>)
+  <span class="ruby-identifier">hash_mapping</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;lsmap -vadapter #{vfchost} -npiv -fmt ':'&quot;</span>
+  <span class="ruby-identifier">mapping</span> = <span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">mapping</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">fcmap</span> = <span class="ruby-identifier">mapping</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;:&quot;</span>)
+    <span class="ruby-comment">## vfchost0:U9117.MMD.XXXXXXX-V1-C7:15:lpar1:AIX:LOGGED_IN:fcs0:U2C4E.001.DBY0000-P2-C4-T1:1:a:fcs0:U9117.MMD.XXXXXXX-V15-C30</span>
+    <span class="ruby-identifier">status</span> =  <span class="ruby-identifier">fcmap</span>[<span class="ruby-value">5</span>]
+    <span class="ruby-identifier">fcname</span> =  <span class="ruby-identifier">fcmap</span>[<span class="ruby-value">6</span>]
+    <span class="ruby-identifier">physloc</span> = <span class="ruby-identifier">fcmap</span>[<span class="ruby-value">7</span>]
+    <span class="ruby-identifier">portsli</span> = <span class="ruby-identifier">fcmap</span>[<span class="ruby-value">8</span>]
+    <span class="ruby-identifier">flags</span> =   <span class="ruby-identifier">fcmap</span>[<span class="ruby-value">9</span>]
+    <span class="ruby-identifier">clntfcname</span> = <span class="ruby-identifier">fcmap</span>[<span class="ruby-value">10</span>]
+    <span class="ruby-identifier">hash_mapping</span> = {<span class="ruby-string">&quot;status&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">status</span>,
+                    <span class="ruby-string">&quot;fcname&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">fcname</span>,
+                    <span class="ruby-string">&quot;physloc&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">physloc</span>,
+                    <span class="ruby-string">&quot;portstatus&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">portsli</span>,
+                    <span class="ruby-string">&quot;flags&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">flags</span>,
+                    <span class="ruby-string">&quot;clntfcname&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">clntfcname</span>}
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">hash_mapping</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- getvfcmap-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getvfcmap-method -->
+
+      
+        <div id="mappings-method" class="method-detail ">
+          <a name="method-i-mappings"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">mappings</span><span
+              class="method-args">(vhost)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Fetch and return a array of hashes of the mappings for the specified vhost
+adapters        Array = [ { “vtd” =&gt; “The vtd name”,</p>
+
+<pre>&quot;lun&quot; =&gt; &quot;the vscsi lun (0x81,0x82...),
+&quot;backingdevice&quot; =&gt; &quot;hdisk17&quot;,
+&quot;pvid&quot; =&gt; &quot;the hdisk pvid if any or none&quot;,
+&quot;sernum&quot; =&gt; &quot;The Storage array serial number&quot;,
+&quot;devid&quot; =&gt; &quot;The Logical device ID&quot;,
+&quot;size&quot; =&gt; &quot;hdisk size&quot; } ]</pre>
+            
+
+            
+            <div class="method-source-code" id="mappings-source">
+<pre>
+<span class="ruby-comment"># File lib/vios.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mappings</span>(<span class="ruby-identifier">vhost</span>)
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Getting mappings for #{vhost} on #{self.name}&quot;</span>)
+  <span class="ruby-identifier">array_mapping</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">array_mapping</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">vhost</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@hdisk_bible</span>
+    <span class="ruby-identifier">get_hdisk_bible</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment">### Will fetch all the mappings for lpar lparname</span>
+  <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;lsmap -vadapter #{vhost} -field 'Backing device' VTD LUN -fmt \&quot;:\&quot;&quot;</span>
+  <span class="ruby-identifier">mapping</span> = <span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">mapping</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">5</span>
+    <span class="ruby-identifier">mapping</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;:&quot;</span>).<span class="ruby-identifier">each_slice</span>(<span class="ruby-value">3</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span> 
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">item</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^hdisk/</span>
+        <span class="ruby-identifier">hdisk_entry</span> = <span class="ruby-ivar">@hdisk_bible</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">item</span>[<span class="ruby-value">0</span>]}[<span class="ruby-value">0</span>]
+        <span class="ruby-identifier">size</span> = <span class="ruby-identifier">run_command</span>(<span class="ruby-node">&quot;lspv -size #{item[0]}&quot;</span>).<span class="ruby-identifier">chomp</span>()
+        <span class="ruby-identifier">hash</span> = { <span class="ruby-string">&quot;vtd&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">item</span>[<span class="ruby-value">1</span>],
+                 <span class="ruby-string">&quot;lun&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">item</span>[<span class="ruby-value">2</span>][<span class="ruby-value">0</span>,<span class="ruby-value">4</span>],
+                 <span class="ruby-string">&quot;backingdevice&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">item</span>[<span class="ruby-value">0</span>],
+                 <span class="ruby-string">&quot;pvid&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">hdisk_entry</span>[<span class="ruby-value">:pvid</span>],
+                 <span class="ruby-string">&quot;sernum&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">hdisk_entry</span>[<span class="ruby-value">:sernum</span>],
+                 <span class="ruby-string">&quot;devid&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">hdisk_entry</span>[<span class="ruby-value">:ldev</span>],
+                 <span class="ruby-string">&quot;size&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">size</span> }
+        <span class="ruby-identifier">array_mapping</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-value">-1</span>,<span class="ruby-identifier">hash</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">array_mapping</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- mappings-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- mappings-method -->
+
+      
+        <div id="mkfcmap-method" class="method-detail ">
+          <a name="method-i-mkfcmap"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">mkfcmap</span><span
+              class="method-args">(vfcname,fcname)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Will create a VFC map between the specified vfcdev &amp; fc dev</p>
+            
+
+            
+            <div class="method-source-code" id="mkfcmap-source">
+<pre>
+<span class="ruby-comment"># File lib/vios.rb, line 275</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mkfcmap</span>(<span class="ruby-identifier">vfcname</span>,<span class="ruby-identifier">fcname</span>)
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Creating vfc mapping #{vfcname}/#{fcname} on #{self.name}&quot;</span>)
+  <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;vfcmap -vadapter #{vfcname} -fcp #{fcname}&quot;</span> 
+  <span class="ruby-identifier">output</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- mkfcmap-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- mkfcmap-method -->
+
+      
+        <div id="networks-method" class="method-detail ">
+          <a name="method-i-networks"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">networks</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return a Array of Vlans available on the VIOs</p>
+            
+
+            
+            <div class="method-source-code" id="networks-source">
+<pre>
+<span class="ruby-comment"># File lib/vios.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">networks</span>
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Getting networks list on #{self.name}&quot;</span>)
+  <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;lshwres -r virtualio --rsubtype eth  -m C1IbmP770-telox --level lpar -F lpar_name,addl_vlan_ids --filter lpar_names=#{self.name}&quot;</span>
+  <span class="ruby-identifier">output</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">hmc</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+  <span class="ruby-identifier">regexp</span> = <span class="ruby-regexp">/(?&lt;=,|&quot;)(\d+)/</span>
+  <span class="ruby-identifier">vlans</span> = <span class="ruby-identifier">output</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-identifier">regexp</span>).<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_i</span>}.<span class="ruby-identifier">sort</span>
+  <span class="ruby-identifier">vlans</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- networks-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- networks-method -->
+
+      
+        <div id="removemapping-method" class="method-detail ">
+          <a name="method-i-removemapping"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">removemapping</span><span
+              class="method-args">(vtdname)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Will remove the vscsi mapping for the specified vtdname</p>
+            
+
+            
+            <div class="method-source-code" id="removemapping-source">
+<pre>
+<span class="ruby-comment"># File lib/vios.rb, line 244</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">removemapping</span>(<span class="ruby-identifier">vtdname</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Removing mapping #{vtdname} on #{self.name}&quot;</span>)
+    <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;rmvdev -vtd #{vtdname}&quot;</span>
+    <span class="ruby-identifier">output</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">output</span>
+  <span class="ruby-keyword">end</span> 
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- removemapping-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- removemapping-method -->
+
+      
+        <div id="rmdev-method" class="method-detail ">
+          <a name="method-i-rmdev"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rmdev</span><span
+              class="method-args">(devname)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Will execute the rmdev command on this vio for the specified devname</p>
+            
+
+            
+            <div class="method-source-code" id="rmdev-source">
+<pre>
+<span class="ruby-comment"># File lib/vios.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rmdev</span>(<span class="ruby-identifier">devname</span>)
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Removing device #{devname} on #{self.name}&quot;</span>)
+  <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;rmdev -dev #{devname}&quot;</span>
+  <span class="ruby-identifier">output</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- rmdev-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rmdev-method -->
+
+      
+        <div id="run_command-method" class="method-detail ">
+          <a name="method-i-run_command"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">run_command</span><span
+              class="method-args">(command)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Execute “command” on the VIO Server (via <a href="HMC.html">HMC</a> SSH
+Connexion using viosvrcmd)</p>
+            
+
+            
+            <div class="method-source-code" id="run_command-source">
+<pre>
+<span class="ruby-comment"># File lib/vios.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+  <span class="ruby-identifier">viocmd</span> = <span class="ruby-node">&quot;viosvrcmd -m #{self.frame.name} --id #{self.id} -c \&quot;#{command}\&quot;&quot;</span>
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;command on #{self.name} =&gt; #{command}&quot;</span>)
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;full hmc command =&gt; #{viocmd}&quot;</span>)
+  <span class="ruby-identifier">return_val</span> = <span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">$hmc_ssh</span>.<span class="ruby-identifier">exec!</span> <span class="ruby-identifier">viocmd</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ch</span>, <span class="ruby-identifier">stream</span>, <span class="ruby-identifier">data</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">stream</span> <span class="ruby-operator">==</span> <span class="ruby-value">:stdout</span>
+      <span class="ruby-identifier">return_val</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">chomp</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">return_val</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- run_command-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- run_command-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

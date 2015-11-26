@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-powervmtools">powervmtools</a>
+    <li><a href="#label-Build+-26+Install+-3A">Build &amp; Install :</a>
+    <li><a href="#label-Usage+example+-3A">Usage example :</a>
+    <li><a href="#label-Frame+-3A">Frame :</a>
+    <li><a href="#label-LPAR-3A">LPAR:</a>
+    <li><a href="#label-VIO+-3A">VIO :</a>
+    <li><a href="#label-Step+by+step+lpar+creation+-3A">Step by step lpar creation :</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./LICENSE.html">LICENSE</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+    <li><a href="./powervmtools_gemspec.html">powervmtools.gemspec</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+
+<h1 id="label-powervmtools">powervmtools<span><a href="#label-powervmtools">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<blockquote>
+<p>Ruby library used to work with <strong>IBM Power Hypervisor.</strong>
+Tested on HMC v7r7.9 and VIOServer 2.2.3.4</p>
+</blockquote>
+
+<h2 id="label-Build+-26+Install+-3A">Build &amp; Install :<span><a href="#label-Build+-26+Install+-3A">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre>$ gem build powervmtools.gemspec
+$ gem install powervmtools-version.gem</pre>
+
+<h2 id="label-Usage+example+-3A">Usage example :<span><a href="#label-Usage+example+-3A">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>(more examples at the end)</p>
+
+<blockquote>
+<p>Get a lpar configuration (not profile!)</p>
+</blockquote>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;powervmtools&#39;</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">&#39;pp&#39;</span>
+<span class="ruby-identifier">myhmc</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">HMC</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;192.168.1.10&#39;</span>,{ :<span class="ruby-identifier">user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;hscroot&#39;</span>,  :<span class="ruby-identifier">passwd</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;abc123&#39;</span>})
+<span class="ruby-identifier">myframe</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Frame</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Frame1&#39;</span>,<span class="ruby-identifier">myhmc</span>)
+<span class="ruby-identifier">mylpar</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Lpar</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Lpar1&#39;</span>,{:<span class="ruby-identifier">frame</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">myframe</span> })
+<span class="ruby-identifier">pp</span> <span class="ruby-identifier">mylpar</span>.<span class="ruby-identifier">getlparconfig</span>
+</pre>
+
+<p>Will output : <code>bash {:name=&gt;&quot;Lpar1&quot;, 
+:lpar_id=&gt;&quot;3&quot;,  :lpar_env=&gt;&quot;aixlinux&quot;, 
+:state=&gt;&quot;Not,Activated&quot;,  :resource_config=&gt;&quot;1&quot;, 
+:os_version=&gt;&quot;Unknown&quot;, 
+:logical_serial_num=&gt;&quot;123X489&quot;, 
+:default_profile=&gt;&quot;default&quot;, 
+:curr_profile=&gt;&quot;default&quot;, 
+:work_group_id=&gt;&quot;none&quot;, 
+:shared_proc_pool_util_auth=&gt;&quot;0&quot;, 
+:allow_perf_collection=&gt;&quot;0&quot;, 
+:power_ctrl_lpar_ids=&gt;&quot;none&quot;, 
+:boot_mode=&gt;&quot;norm&quot;,  :lpar_keylock=&gt;&quot;norm&quot;, 
+:auto_start=&gt;&quot;0&quot;, 
+:redundant_err_path_reporting=&gt;&quot;0&quot;, 
+:rmc_state=&gt;&quot;inactive&quot;,  :rmc_ipaddr=&gt;&quot;&quot;, 
+:time_ref=&gt;&quot;0&quot;,  :lpar_avail_priority=&gt;&quot;127&quot;, 
+:desired_lpar_proc_compat_mode=&gt;&quot;default&quot;, 
+:curr_lpar_proc_compat_mode=&gt;&quot;POWER7&quot;, 
+:suspend_capable=&gt;&quot;0&quot;, 
+:remote_restart_capable=&gt;&quot;0&quot;, 
+:sync_curr_profile=&gt;&quot;0&quot;, 
+:affinity_group_id=&gt;&quot;none&quot;,  :vtpm_enabled=&gt;&quot;0&quot;}
+</code></p>
+
+<blockquote>
+<p>Get a lpar Disk mappings (vscsi)</p>
+</blockquote>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;powervmtools&#39;</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">&#39;pp&#39;</span>
+<span class="ruby-identifier">myhmc</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">HMC</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;192.168.1.10&#39;</span>,{ :<span class="ruby-identifier">user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;hscroot&#39;</span>,  :<span class="ruby-identifier">passwd</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;abc123&#39;</span>})
+<span class="ruby-identifier">myframe</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Frame</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Frame1&#39;</span>,<span class="ruby-identifier">myhmc</span>)
+<span class="ruby-identifier">mylpar</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Lpar</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Lpar1&#39;</span>,{:<span class="ruby-identifier">frame</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">myframe</span> })
+<span class="ruby-identifier">pp</span> <span class="ruby-identifier">mylpar</span>.<span class="ruby-identifier">getmappings</span>
+</pre>
+
+<p>Will output : “`bash [{:clientadapterid=&gt;20,  :serveradapterid=&gt;10, 
+:vioserverid=&gt;1,  :devname=&gt;“vhost0”,  :mappings=&gt; 
+[{“vtd”=&gt;“vtdisk1”, “lun”=&gt;“0x81”, “backingdevice”=&gt;“hdisk72”,
+“pvid”=&gt;“00c9c37775dc3f63”, “sernum”=&gt;“17DE9”, “devid”=&gt;“02E4”,
+“size”=&gt;“65536”}, {“vtd”=&gt;“vtdisk2”, “lun”=&gt;“0x82”,
+“backingdevice”=&gt;“hdisk73”, “pvid”=&gt;“none”, “sernum”=&gt;“17DE9”,
+“devid”=&gt;“02E5”, “size”=&gt;“32768”}]}, …</p>
+
+<pre class="ruby">
+<span class="ruby-comment">## Classes : </span>
+
+<span class="ruby-comment">### HMC :</span>
+</pre>
+
+<p>ruby myhmc = <a
+href="PowerVMTools/HMC.html#method-c-new">PowerVMTools::HMC.new</a>(&#39;192.168.1.120&#39;,{
+:user =&gt; &#39;hscroot&#39;, :passwd =&gt; &#39;abc123&#39;}) “` This
+will create a HMC object. Options :</p>
+<ul><li>
+<p><code>:user</code> : HMC username to use. Must have the Rights to launch
+VIO Commands</p>
+</li><li>
+<p><code>:passwd</code> : the associated password</p>
+</li><li>
+<p><code>:port</code> : the SSH Port if not default</p>
+</li><li>
+<p><code>:debug</code> : True/False (bool)</p>
+</li></ul>
+
+<p>Methods :</p>
+<ul><li>
+<pre class="ruby">(<span class="ruby-identifier">framename</span>)
+</pre>
+
+<p>: Return true if &#39;framename&#39; exists.</p>
+</li><li>
+<pre class="ruby">(<span class="ruby-identifier">command</span>)
+</pre>
+
+<p>: Run &#39;command&#39; on hmc and return the result.</p>
+</li><li>
+<pre class="ruby">(<span class="ruby-identifier">status</span>)
+</pre>
+
+<p>: Get a list of frames by status (Operating…)</p>
+</li><li>
+<p><code>getframes</code> : Get a list for frames managed by this hmc along
+with theire configuration (lssyscfg)</p>
+</li></ul>
+
+<h3 id="label-Frame+-3A">Frame :<span><a href="#label-Frame+-3A">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">myframe</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Frame</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;p770&#39;</span>,<span class="ruby-identifier">hmc_object</span>)
+</pre>
+
+<p>This will create the Frame Object</p>
+
+<p>Methods :</p>
+<ul><li>
+<pre class="ruby">(<span class="ruby-identifier">id</span>)
+</pre>
+
+<p>: Will return the VIO Server Object for vioserver “id” (See VIO Class)</p>
+</li><li>
+<pre class="ruby">(<span class="ruby-identifier">lparname</span>)
+</pre>
+
+<p>: Return True if lpar “lparname” exits.</p>
+</li><li>
+<p><code>getlpars</code>: Get a list of lpars hosted on this Frame.</p>
+</li><li>
+<p><code>networks</code>: Get a list all the Vlans managed on this frame</p>
+</li></ul>
+
+<h3 id="label-LPAR-3A">LPAR:<span><a href="#label-LPAR-3A">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">mylpar</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Lpar</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;lpar1&#39;</span>, { :<span class="ruby-identifier">frame</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">obj_frame</span> })
+</pre>
+
+<p>This will create the Lpar object. If Lpar already exists, specify the frame
+object while creating the lpar. If not, do not specify the option as we
+will specify if for the creation process.</p>
+
+<p>Methods :</p>
+<ul><li>
+<pre class="ruby">(<span class="ruby-identifier">obj_frame</span>)
+</pre>
+
+<p>: Set the Frame for the Lpar object</p>
+</li><li>
+<p><code>getlparconfig</code> : Get all the Lpar Settings and return it as a
+hash</p>
+</li><li>
+<p><code>getlparprofiles</code> : Get all the Lpar profiles and return it as a
+Array of Hashes</p>
+</li><li>
+<p><code>getmapping</code> : Get all the vscsi mappings for this lpar object
+(Private)</p>
+</li><li>
+<p><code>getvfcmappings</code> : Get all the vfc mappings for this lpar object
+(Private)</p>
+</li><li>
+<pre class="ruby">({})
+</pre>
+
+<p>: Set all the lpar creation settings.  an option Hash is provided as the
+creations options.</p>
+</li><li>
+<pre class="ruby">({})
+</pre>
+
+<p>: Power ON/OFF the lpar following &#39;options&#39;  – <code>:action</code>
+: poweroff/poweron  – <code>:os</code> : (bool.) True or False. Initiate a
+proper OS Shutdown  – <code>:restart</code> : (bool.) True or False.
+Initiate a machine restart  – <code>:immed</code> : (bool.) True or False.
+Initiate operations immediately (shutdown &amp; restart)</p>
+</li><li>
+<p><code>getstate</code> : Get the Lpar state (lssyscfg)</p>
+</li><li>
+<p><code>save_profile</code> : Save the Running Lpar profile to the current
+profile</p>
+</li><li>
+<p><code>getstate</code> : Get the Lpar state (lssyscfg)</p>
+</li><li>
+<p><code>getvioadaptersnames</code>: Get the VIO server adapter name for our
+client devices</p>
+</li><li>
+<pre class="ruby">({})
+</pre>
+
+<p>: Delete the Current Lpar  – <code>:test</code>: (bool.) True or False</p>
+</li><li>
+<pre class="ruby">({})
+</pre>
+
+<p>: Create the Lpar with the specified settings
+(<code>setsettings({})</code>)  – <code>:test</code>: (bool.) True or False</p>
+</li><li>
+<pre>(action,{})</pre>
+
+<p>: Run a Dlpar operation.  – <code>action</code>: add / remove  –
+<code>:type</code> : adapter type : virtualio“  – <code>:subtype</code>:
+vscsi…  – <code>:said</code> : ”Server Adapter ID“  –
+<code>:adapter_type</code> : ”client|server“  –
+<code>:remote_lpar_name</code> : ”otherside lpar name“  –
+<code>:remote_slot_num</code> : ”otherside slot num“</p>
+</li></ul>
+
+<h3 id="label-VIO+-3A">VIO :<span><a href="#label-VIO+-3A">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This class is only initialized within a Frame Object. This class extends
+the LPAR Class.</p>
+
+<p>Methods (on a Frame&#39;s VIO object) : <a href="0">myframe.vioservers</a>
+is an array of all the VIO Servers</p>
+<ul><li>
+<p><code>get_hdisk_bible</code>:Will update the local hdisk list with all the
+devices informations. This Works only for Hitachi VSP Devices, as I do not
+have access so far to any other Storage Array.</p>
+</li><li>
+<pre class="ruby">(<span class="ruby-identifier">command</span>)
+</pre>
+
+<p>: Run and return the output of the viossvrcmd for this vio server</p>
+</li><li>
+<pre class="ruby">(<span class="ruby-identifier">vhost</span>)
+</pre>
+
+<p>Will return list of all the VTD mappings for this vhost (eg: vhost15)</p>
+</li><li>
+<pre>(*dev)</pre>
+
+<p>:Will run the cfgdev command. the optional Argument is to specify the
+device, (eg: vio0), usefull to speedup DLPARs operations if needed.</p>
+</li><li>
+<p><code>networks</code> : Get a list of all the vlans served by this VIO
+server</p>
+</li><li>
+<p><code>getvadapters</code> : Will return a list of all the vadapters on this
+VIO, with the server adapters id and it&#39;s associated device name</p>
+</li><li>
+<pre class="ruby">(<span class="ruby-identifier">adap_id</span>)
+</pre>
+
+<p>: Will return the adapter name for this server adapter id</p>
+</li><li>
+<pre class="ruby">(<span class="ruby-identifier">vfchost</span>)
+</pre>
+
+<p>: Will return the VFC mapping for this vfchost</p>
+</li><li>
+<pre class="ruby">(<span class="ruby-identifier">devname</span>)
+</pre>
+
+<p>Will remove the device “devname” from this VIO. This Device must not be in
+use.</p>
+</li><li>
+<pre class="ruby">(<span class="ruby-identifier">vtdname</span>)
+</pre>
+
+<p>: Will remove the vscsi mapping “vtdname”</p>
+</li><li>
+<pre class="ruby">(<span class="ruby-identifier">device</span>,<span class="ruby-identifier">vadapter</span>,<span class="ruby-identifier">options</span> = {})
+</pre>
+
+<p>: Will create a mapping for “device” on “vadapter”. Options : –
+<code>:vtdname</code> =&gt; the VTD name – <code>:force</code> =&gt;
+(Bool).</p>
+</li></ul>
+
+<h2 id="label-Step+by+step+lpar+creation+-3A">Step by step lpar creation :<span><a href="#label-Step+by+step+lpar+creation+-3A">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Create the hmc object :</p>
+
+<pre class="ruby"><span class="ruby-identifier">myhmc</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">HMC</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;192.168.1.10&#39;</span>,{ :<span class="ruby-identifier">user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;hscroot&#39;</span>,  :<span class="ruby-identifier">passwd</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;abc123&#39;</span>})
+</pre>
+
+<p>Once the HMC is created, we can create the Frame Object : <code>ruby
+myframe = PowerVMTools::Frame.new(&#39;Frame1&#39;,myhmc) </code> Creating
+a frame object will populate the VIO Servers on this frame. Let&#39;s
+create a Lpar object without Frame, and putting the settings together :</p>
+
+<pre class="ruby"><span class="ruby-identifier">mylpar</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Lpar</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Lpar1&#39;</span>)
+<span class="ruby-identifier">mylpar</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Lpar</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Lpar1&#39;</span>,{:<span class="ruby-identifier">frame</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">myframe</span> })
+<span class="ruby-identifier">options</span> = { :<span class="ruby-identifier">mem</span> =<span class="ruby-operator">&gt;</span> { :<span class="ruby-identifier">max</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">16384</span>,
+                      :<span class="ruby-identifier">min</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1024</span>,
+                      :<span class="ruby-identifier">des</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">4096</span> },
+            :<span class="ruby-identifier">cpu</span> =<span class="ruby-operator">&gt;</span> { :<span class="ruby-identifier">desec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0.4</span>,
+                      :<span class="ruby-identifier">minec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0.1</span>,
+                      :<span class="ruby-identifier">maxec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">4</span>,
+                      :<span class="ruby-identifier">desvp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">4</span>,
+                      :<span class="ruby-identifier">minvp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+                      :<span class="ruby-identifier">maxvp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8</span> },
+            :<span class="ruby-identifier">ame</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+            :<span class="ruby-identifier">procmode</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;shared&quot;</span>,
+            :<span class="ruby-identifier">sharing_mode</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;uncap&quot;</span>,
+            :<span class="ruby-identifier">uncap_weight</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;128&quot;</span>,
+            :<span class="ruby-identifier">max_virtual_slots</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;64&quot;</span>,
+            :<span class="ruby-identifier">profile_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;default&quot;</span>,
+            :<span class="ruby-identifier">virtual_eth_adapters</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;2/0/19//0/0/ETHERNET0&quot;</span>,
+            :<span class="ruby-identifier">virtual_scsi_adapters</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;10/client/1/vios1/20/0,11/client/2/vios2/20/0&quot;</span>,
+            :<span class="ruby-identifier">virtual_fc_adapters</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;20/client/1/vios1/21//0,21/client/2/vios2/21//0&quot;</span>}
+<span class="ruby-identifier">mylpar</span>.<span class="ruby-identifier">setsettings</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-identifier">mylpar</span>.<span class="ruby-identifier">create</span>({:<span class="ruby-identifier">test</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span> })
+</pre>
+
+<p>This Lpar is now created on the specfied frame. Let&#39;s map some vscsi
+devices :</p>
+
+<pre class="ruby"><span class="ruby-comment"># get vios vadapter names : </span>
+<span class="ruby-identifier">vadapter_names</span> = <span class="ruby-identifier">mylpar</span>.<span class="ruby-identifier">getvioadaptersnames</span>
+<span class="ruby-comment"># this produces : </span>
+<span class="ruby-comment"># {vioid =&gt; [[adapt_id,adapt_name]]} : </span>
+<span class="ruby-comment"># {1=&gt;[[10, &quot;vhost0&quot;], [11, &quot;vhost1&quot;], [15, &quot;vfchost0&quot;]],</span>
+<span class="ruby-comment">#  2=&gt;[[10, &quot;vhost0&quot;], [11, &quot;vhost1&quot;], [15, &quot;vfchost0&quot;]]}</span>
+<span class="ruby-comment"># to get VIO id 1 first adapter name : </span>
+<span class="ruby-comment">#   vadapter_names[1][0][1]</span>
+<span class="ruby-comment"># to get VIO id 2 second Adapter name : </span>
+<span class="ruby-comment">#   vadapter_names[1][1][1]</span>
+
+<span class="ruby-identifier">myframe</span>.<span class="ruby-identifier">vioservers</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">createmapping</span>(<span class="ruby-string">&quot;hdisk51&quot;</span>,<span class="ruby-identifier">vadapter_names</span>[<span class="ruby-value">1</span>][<span class="ruby-value">0</span>][<span class="ruby-value">1</span>],{:<span class="ruby-identifier">vtdname</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;vdisk1&#39;</span>, :<span class="ruby-identifier">force</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>})
+<span class="ruby-identifier">myframe</span>.<span class="ruby-identifier">vioservers</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">createmapping</span>(<span class="ruby-string">&quot;hdisk51&quot;</span>,<span class="ruby-identifier">vadapter_names</span>[<span class="ruby-value">2</span>][<span class="ruby-value">0</span>][<span class="ruby-value">1</span>],{:<span class="ruby-identifier">vtdname</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;vdisk1&#39;</span>, :<span class="ruby-identifier">force</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>})
+</pre>
+
+<p>For the example, let&#39;s create some vfc mappings : <code>ruby  ##
+let&#39;s lookup the vfc device name on the vadapter_names hash.
+vio1vfcname = vadapter_names[1].map{ |x| x.grep(/vfchost/).join}.delete_if
+{ |x| x == ""}[0] vio2vfcname = vadapter_names[2].map{ |x|
+x.grep(/vfchost/).join}.delete_if { |x| x == ""}[0]
+myframe.vioservers[0].mkfcmap(vio1vfcname,&quot;fcs0&quot;)
+myframe.vioservers[1].mkfcmap(vio2vfcname,&quot;fcs1&quot;) </code></p>
+
+<p>Let&#39;s start the machine with <code>lpar_netboot</code> :</p>
+
+<pre class="ruby"><span class="ruby-identifier">mylpar</span>.<span class="ruby-identifier">net_boot</span>({:<span class="ruby-identifier">ip</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;192.168.10.15&quot;</span>, :<span class="ruby-identifier">netmask</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;255.255.255.0&quot;</span>, :<span class="ruby-identifier">gateway</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;192.168.10.1&quot;</span>, :<span class="ruby-identifier">server</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;192.168.11.3&quot;</span>})
+</pre>
+
+<p>Let&#39;s put it all together :</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;powervmtools&#39;</span>
+
+<span class="ruby-identifier">myhmc</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">HMC</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;192.168.1.10&#39;</span>,{ :<span class="ruby-identifier">user</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;hscroot&#39;</span>,  :<span class="ruby-identifier">passwd</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;abc123&#39;</span>})
+<span class="ruby-identifier">myframe</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Frame</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Frame1&#39;</span>,<span class="ruby-identifier">myhmc</span>)
+<span class="ruby-identifier">mylpar</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Lpar</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Lpar1&#39;</span>)
+<span class="ruby-identifier">mylpar</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Lpar</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Lpar1&#39;</span>,{:<span class="ruby-identifier">frame</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">myframe</span> })
+<span class="ruby-identifier">options</span> = { :<span class="ruby-identifier">mem</span> =<span class="ruby-operator">&gt;</span> { :<span class="ruby-identifier">max</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">16384</span>,
+                      :<span class="ruby-identifier">min</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1024</span>,
+                      :<span class="ruby-identifier">des</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">4096</span> },
+            :<span class="ruby-identifier">cpu</span> =<span class="ruby-operator">&gt;</span> { :<span class="ruby-identifier">desec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0.4</span>,
+                      :<span class="ruby-identifier">minec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0.1</span>,
+                      :<span class="ruby-identifier">maxec</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">4</span>,
+                      :<span class="ruby-identifier">desvp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">4</span>,
+                      :<span class="ruby-identifier">minvp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+                      :<span class="ruby-identifier">maxvp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8</span> },
+            :<span class="ruby-identifier">ame</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,
+            :<span class="ruby-identifier">procmode</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;shared&quot;</span>,
+            :<span class="ruby-identifier">sharing_mode</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;uncap&quot;</span>,
+            :<span class="ruby-identifier">uncap_weight</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;128&quot;</span>,
+            :<span class="ruby-identifier">max_virtual_slots</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;64&quot;</span>,
+            :<span class="ruby-identifier">profile_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;default&quot;</span>,
+            :<span class="ruby-identifier">virtual_eth_adapters</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;2/0/19//0/0/ETHERNET0&quot;</span>,
+            :<span class="ruby-identifier">virtual_scsi_adapters</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;10/client/1/vios1/20/0,11/client/2/vios2/20/0&quot;</span>,
+            :<span class="ruby-identifier">virtual_fc_adapters</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;20/client/1/vios1/21//0,21/client/2/vios2/21//0&quot;</span>}
+<span class="ruby-identifier">mylpar</span>.<span class="ruby-identifier">setsettings</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-identifier">mylpar</span>.<span class="ruby-identifier">create</span>({:<span class="ruby-identifier">test</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span> })
+<span class="ruby-comment"># get vios vadapter names : </span>
+<span class="ruby-identifier">vadapter_names</span> = <span class="ruby-identifier">mylpar</span>.<span class="ruby-identifier">getvioadaptersnames</span>
+<span class="ruby-comment"># this produces : </span>
+<span class="ruby-comment"># {vioid =&gt; [[adapt_id,adapt_name]]} : </span>
+<span class="ruby-comment"># {1=&gt;[[10, &quot;vhost0&quot;], [11, &quot;vhost1&quot;], [15, &quot;vfchost0&quot;]],</span>
+<span class="ruby-comment">#  2=&gt;[[10, &quot;vhost0&quot;], [11, &quot;vhost1&quot;], [15, &quot;vfchost0&quot;]]}</span>
+<span class="ruby-comment"># to get VIO id 1 first adapter name : </span>
+<span class="ruby-comment">#   vadapter_names[1][0][1]</span>
+<span class="ruby-comment"># to get VIO id 2 second Adapter name : </span>
+<span class="ruby-comment">#   vadapter_names[1][1][1]</span>
+
+<span class="ruby-identifier">myframe</span>.<span class="ruby-identifier">vioservers</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">createmapping</span>(<span class="ruby-string">&quot;hdisk51&quot;</span>,<span class="ruby-identifier">vadapter_names</span>[<span class="ruby-value">1</span>][<span class="ruby-value">0</span>][<span class="ruby-value">1</span>],{:<span class="ruby-identifier">vtdname</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;vdisk1&#39;</span>, :<span class="ruby-identifier">force</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>})
+<span class="ruby-identifier">myframe</span>.<span class="ruby-identifier">vioservers</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">createmapping</span>(<span class="ruby-string">&quot;hdisk51&quot;</span>,<span class="ruby-identifier">vadapter_names</span>[<span class="ruby-value">2</span>][<span class="ruby-value">0</span>][<span class="ruby-value">1</span>],{:<span class="ruby-identifier">vtdname</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;vdisk1&#39;</span>, :<span class="ruby-identifier">force</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>})
+<span class="ruby-comment">## let&#39;s lookup the vfc device name on the vadapter_names hash.</span>
+<span class="ruby-identifier">vio1vfcname</span> = <span class="ruby-identifier">vadapter_names</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp">/vfchost/</span>).<span class="ruby-identifier">join</span>}.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>}[<span class="ruby-value">0</span>]
+<span class="ruby-identifier">vio2vfcname</span> = <span class="ruby-identifier">vadapter_names</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp">/vfchost/</span>).<span class="ruby-identifier">join</span>}.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>}[<span class="ruby-value">0</span>]
+<span class="ruby-identifier">myframe</span>.<span class="ruby-identifier">vioservers</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">mkfcmap</span>(<span class="ruby-identifier">vio1vfcname</span>,<span class="ruby-string">&quot;fcs0&quot;</span>)
+<span class="ruby-identifier">myframe</span>.<span class="ruby-identifier">vioservers</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">mkfcmap</span>(<span class="ruby-identifier">vio2vfcname</span>,<span class="ruby-string">&quot;fcs1&quot;</span>)
+<span class="ruby-identifier">mylpar</span>.<span class="ruby-identifier">net_boot</span>({:<span class="ruby-identifier">ip</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;192.168.10.15&quot;</span>, :<span class="ruby-identifier">netmask</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;255.255.255.0&quot;</span>, :<span class="ruby-identifier">gateway</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;192.168.10.1&quot;</span>, :<span class="ruby-identifier">server</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;192.168.11.3&quot;</span>})
+</pre>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

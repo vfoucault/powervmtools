@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Class: PowerVMTools::Lpar</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/lpar_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/lpar.rb">lib/lpar.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-create">#create</a></li>
+          
+          <li><a href="#method-i-deletelpar">#deletelpar</a></li>
+          
+          <li><a href="#method-i-dlpar">#dlpar</a></li>
+          
+          <li><a href="#method-i-getlparconfig">#getlparconfig</a></li>
+          
+          <li><a href="#method-i-getlparprofiles">#getlparprofiles</a></li>
+          
+          <li><a href="#method-i-getmappings">#getmappings</a></li>
+          
+          <li><a href="#method-i-getstate">#getstate</a></li>
+          
+          <li><a href="#method-i-getvfcmappings">#getvfcmappings</a></li>
+          
+          <li><a href="#method-i-getvioadaptersnames">#getvioadaptersnames</a></li>
+          
+          <li><a href="#method-i-net_boot">#net_boot</a></li>
+          
+          <li><a href="#method-i-power">#power</a></li>
+          
+          <li><a href="#method-i-save_profile">#save_profile</a></li>
+          
+          <li><a href="#method-i-setframe">#setframe</a></li>
+          
+          <li><a href="#method-i-setsettings">#setsettings</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../PowerVMTools.html">PowerVMTools</a></li>
+        
+          <li><a href="../PowerVMTools/Common.html">PowerVMTools::Common</a></li>
+        
+          <li><a href="../PowerVMTools/Error.html">PowerVMTools::Error</a></li>
+        
+          <li><a href="../PowerVMTools/Error/CustomError.html">PowerVMTools::Error::CustomError</a></li>
+        
+          <li><a href="../PowerVMTools/Error/PowerStateError.html">PowerVMTools::Error::PowerStateError</a></li>
+        
+          <li><a href="../PowerVMTools/Frame.html">PowerVMTools::Frame</a></li>
+        
+          <li><a href="../PowerVMTools/HMC.html">PowerVMTools::HMC</a></li>
+        
+          <li><a href="../PowerVMTools/Lpar.html">PowerVMTools::Lpar</a></li>
+        
+          <li><a href="../PowerVMTools/NIM.html">PowerVMTools::NIM</a></li>
+        
+          <li><a href="../PowerVMTools/Vios.html">PowerVMTools::Vios</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">PowerVMTools::Lpar</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="config-attribute-method" class="method-detail">
+          <a name="config"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">config</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="createsettings-attribute-method" class="method-detail">
+          <a name="createsettings"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">createsettings</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="frame-attribute-method" class="method-detail">
+          <a name="frame"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">frame</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="id-attribute-method" class="method-detail">
+          <a name="id"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">id</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="name-attribute-method" class="method-detail">
+          <a name="name"></a>
+          
+          <a name="name="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">name</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="profile-attribute-method" class="method-detail">
+          <a name="profile"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">profile</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="profiles-attribute-method" class="method-detail">
+          <a name="profiles"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">profiles</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description">
+          
+          
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(name,options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>the new method used to define lpar objects options :</p>
+<ul><li>
+<p>:frame : the frame object which holds/will holds the lpar</p>
+</li><li>
+<p>:debug : (bool) True/False : Enable the debug  output</p>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>,<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
+  <span class="ruby-ivar">@log</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDOUT</span>)
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:frame</span>]
+    <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Settings frame #{options[:frame].name} for #{self.name}&quot;</span>)
+    <span class="ruby-identifier">setframe</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:frame</span>])
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:debug</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-ivar">@debug</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;New Lpar instance #{self.name}&quot;</span>) 
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="create-method" class="method-detail ">
+          <a name="method-i-create"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">create</span><span
+              class="method-args">(options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Will create a lpar with the following options. Must specify settings with
+self.setsettings() before. { :test =&gt; (bool) True | False } It’s
+important to note that is there is some vscsi devices, the corresponding
+adapters will be hot added to the correspondings Vio Servers via DLPAR.</p>
+            
+
+            
+            <div class="method-source-code" id="create-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 313</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Creating partition #{self.name}&quot;</span>) 
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:test</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;This is a test only no create will occur&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">settings</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">createsettings</span>
+    <span class="ruby-identifier">profilestring</span> = <span class="ruby-node">&quot;\&quot;name=#{self.name},profile_name=#{settings[:profile_name]},lpar_env=aixlinux,min_mem=#{settings[:mem][:min]},desired_mem=#{settings[:mem][:des]},max_mem=#{settings[:mem][:max]},mem_expansion=#{settings[:ame]},proc_mode=#{settings[:procmode]},min_procs=#{settings[:cpu][:minvp]},desired_procs=#{settings[:cpu][:desvp]},max_procs=#{settings[:cpu][:maxvp]},min_proc_units=#{settings[:cpu][:minec]},desired_proc_units=#{settings[:cpu][:desec]},max_proc_units=#{settings[:cpu][:maxec]},sharing_mode=#{settings[:sharing_mode]},uncap_weight=#{settings[:uncap_weight]},boot_mode=norm,max_virtual_slots=#{settings[:max_virtual_slots]},\\\&quot;virtual_eth_adapters=#{settings[:virtual_eth_adapters]}\\\&quot;,\\\&quot;virtual_scsi_adapters=#{settings[:virtual_scsi_adapters]}\\\&quot;,\\\&quot;virtual_fc_adapters=#{settings[:virtual_fc_adapters]}\\\&quot;\&quot;&quot;</span>
+    <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;mksyscfg -m #{self.frame.name} -r lpar -i #{profilestring}&quot;</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:test</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">output</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">hmc</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">output</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/The format of the configuration data is invalid./</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">output</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/of the memory region size for the managed system./</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CustomError</span>, {<span class="ruby-value">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">output</span>, <span class="ruby-value">:command</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span>} 
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment">### do vios</span>
+      <span class="ruby-identifier">updatedvios</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">settings</span>[<span class="ruby-value">:virtual_scsi_adapters</span>].<span class="ruby-identifier">nil?</span>
+        <span class="ruby-identifier">settings</span>[<span class="ruby-value">:virtual_scsi_adapters</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">','</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">entry</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">vscsi</span> = <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>)
+          <span class="ruby-identifier">objvio</span> =  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">vioserver</span>(<span class="ruby-identifier">vscsi</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">to_i</span>)
+          <span class="ruby-identifier">updatedvios</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">id</span>)
+          <span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">dlpar</span>(<span class="ruby-string">&quot;add&quot;</span>,{<span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;virtualio&quot;</span>,
+                              <span class="ruby-value">:subtype</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;scsi&quot;</span>, 
+                              <span class="ruby-value">:said</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">vscsi</span>[<span class="ruby-value">4</span>],
+                              <span class="ruby-value">:adapter_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;server&quot;</span>,
+                              <span class="ruby-value">:remote_lpar_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span>,
+                              <span class="ruby-value">:remote_slot_num</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">vscsi</span>[<span class="ruby-value">0</span>] })
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">settings</span>[<span class="ruby-value">:virtual_fc_adapters</span>].<span class="ruby-identifier">nil?</span>
+        <span class="ruby-identifier">settings</span>[<span class="ruby-value">:virtual_fc_adapters</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">','</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">entry</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">vfc</span> = <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>)
+          <span class="ruby-identifier">objvio</span> =  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">vioserver</span>(<span class="ruby-identifier">vfc</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">to_i</span>)
+          <span class="ruby-identifier">updatedvios</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">id</span>)
+          <span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">dlpar</span>(<span class="ruby-string">&quot;add&quot;</span>,{<span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;virtualio&quot;</span>,
+                              <span class="ruby-value">:subtype</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;fc&quot;</span>, 
+                              <span class="ruby-value">:said</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">vfc</span>[<span class="ruby-value">4</span>],
+                              <span class="ruby-value">:adapter_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;server&quot;</span>,
+                              <span class="ruby-value">:remote_lpar_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span>,
+                              <span class="ruby-value">:remote_slot_num</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">vfc</span>[<span class="ruby-value">0</span>] })
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">updatedvios</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">vios</span><span class="ruby-operator">|</span> <span class="ruby-identifier">obj</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">vioserver</span>(<span class="ruby-identifier">vios</span>); <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">save_profile</span>(); <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">cfgdev</span>(<span class="ruby-string">&quot;vio0&quot;</span>)}
+      <span class="ruby-comment">## forceing the setframe to update the current object to get the lpar ID</span>
+      <span class="ruby-identifier">setframe</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>)
+      <span class="ruby-comment">## Power Cycle the partition to activate the default profile</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">power</span>({<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;poweron&quot;</span> })
+      <span class="ruby-comment">## loop to get statue</span>
+      <span class="ruby-identifier">cstate</span> = <span class="ruby-identifier">getstate</span>()
+      <span class="ruby-identifier">counter</span> = <span class="ruby-value">0</span>
+      <span class="ruby-keyword">while</span> <span class="ruby-identifier">cstate</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Not Activated&quot;</span>
+        <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Waiting for lpar #{self.name} to start&quot;</span>)
+        <span class="ruby-identifier">cstate</span> = <span class="ruby-identifier">getstate</span>()
+        <span class="ruby-identifier">sleep</span> <span class="ruby-value">1</span>
+        <span class="ruby-identifier">counter</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CustomError</span>, {<span class="ruby-value">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Timeout waiting for lpar to come up&quot;</span>} <span class="ruby-keyword">if</span> <span class="ruby-identifier">counter</span> <span class="ruby-operator">==</span> <span class="ruby-value">60</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">power</span>({<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;poweroff&quot;</span>, <span class="ruby-value">:immed</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span> })
+      <span class="ruby-comment">## forceing the setframe to update the current object to get profile &amp; profiles setted</span>
+      <span class="ruby-identifier">setframe</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">info</span>(<span class="ruby-node">&quot;Command not executed =&gt; #{command}&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CustomError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">e</span>.<span class="ruby-identifier">handle</span>
+    <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- create-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- create-method -->
+
+      
+        <div id="deletelpar-method" class="method-detail ">
+          <a name="method-i-deletelpar"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">deletelpar</span><span
+              class="method-args">(options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Delete this lpar, with options :  { :test =&gt; (bool) True | False }</p>
+            
+
+            
+            <div class="method-source-code" id="deletelpar-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 256</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">deletelpar</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Deleting Partition #{self.name}&quot;</span>) 
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:test</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;This is a test only no create will occur&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">cstate</span> = <span class="ruby-identifier">getstate</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">cstate</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Not Activated&quot;</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">PowerStateError</span>, {<span class="ruby-value">:state</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Not Activated&quot;</span>, <span class="ruby-value">:cstate</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">cstate</span>, <span class="ruby-value">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span> }
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">updatedvios</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">mappings</span> = <span class="ruby-identifier">getmappings</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">getvfcmappings</span>)
+    <span class="ruby-identifier">mappings</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">vadapter</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">objvio</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">vioserver</span>(<span class="ruby-identifier">vadapter</span>[<span class="ruby-value">:vioserverid</span>])
+      <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">vadapter</span>[<span class="ruby-value">:mappings</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">vadapter</span>[<span class="ruby-value">:mappings</span>].<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>   
+        <span class="ruby-identifier">vadapter</span>[<span class="ruby-value">:mappings</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span> 
+          <span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">removemapping</span>(<span class="ruby-identifier">map</span>[<span class="ruby-string">&quot;vtd&quot;</span>])
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">rmdev</span>(<span class="ruby-identifier">vadapter</span>[<span class="ruby-value">:devname</span>])
+      <span class="ruby-identifier">subtype</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">vadapter</span>[<span class="ruby-value">:devname</span>]
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/vhost/</span>
+        <span class="ruby-identifier">subtype</span> = <span class="ruby-string">&quot;scsi&quot;</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/vfchost/</span>
+        <span class="ruby-identifier">subtype</span> = <span class="ruby-string">&quot;fc&quot;</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">dlpar</span>(<span class="ruby-string">&quot;remove&quot;</span>,{<span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;virtualio&quot;</span>, <span class="ruby-value">:subtype</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">subtype</span>, <span class="ruby-value">:said</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">vadapter</span>[<span class="ruby-value">:serveradapterid</span>]})
+      <span class="ruby-identifier">updatedvios</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">id</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">updatedvios</span>.<span class="ruby-identifier">uniq</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">objvio</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">vioserver</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">x</span>.<span class="ruby-identifier">save_profile</span>; <span class="ruby-identifier">x</span>.<span class="ruby-identifier">cfgdev</span>(<span class="ruby-string">&quot;vio0&quot;</span>)}    
+    <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;rmsyscfg -r lpar -m #{self.frame.name} -n #{self.name}&quot;</span>
+    <span class="ruby-identifier">output</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">hmc</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+    <span class="ruby-comment">## update remaining objects</span>
+    <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Deleted partition #{self.name}&quot;</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">getlpars</span>
+    <span class="ruby-ivar">@id</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@frame</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@profile</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@profiles</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@createsettings</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@config</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">PowerStateError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">e</span>.<span class="ruby-identifier">handle</span>
+    <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CustomError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">e</span>.<span class="ruby-identifier">handle</span>
+    <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- deletelpar-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- deletelpar-method -->
+
+      
+        <div id="dlpar-method" class="method-detail ">
+          <a name="method-i-dlpar"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">dlpar</span><span
+              class="method-args">(action,options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Initiate a DLPAR operation on this lpar Object. the options are used to
+defined the settings :  ,,, { :type =&gt; “adapter type : virtualio”,</p>
+
+<pre>:subtype =&gt; &quot;vscsi...&quot;,
+:said =&gt; &quot;Server Adapter ID&quot;,
+:adapter_type =&gt; &quot;client|server&quot;,
+:remote_lpar_name =&gt; &quot;othersidelparname&quot;,
+:remote_slot_num =&gt; &quot;othersideslotnum&quot;</pre>
+
+<p>} ,,,</p>
+            
+
+            
+            <div class="method-source-code" id="dlpar-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 393</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dlpar</span>(<span class="ruby-identifier">action</span>,<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">command</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">action</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;add&quot;</span>
+      <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;chhwres -m #{self.frame.name} -r #{options[:type]} -o a --id #{self.id} --rsubtype #{options[:subtype]} -s #{options[:said]} -a \&quot;adapter_type=#{options[:adapter_type]},remote_lpar_name=#{options[:remote_lpar_name]},remote_slot_num=#{options[:remote_slot_num]}\&quot;&quot;</span>
+      <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Hotadding device type #{options[:subtype]} to partition #{self.name}&quot;</span>) 
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;remove&quot;</span>
+      <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;chhwres -m #{self.frame.name} -r #{options[:type]} -o r --id #{self.id} --rsubtype #{options[:subtype]} -s #{options[:said]}&quot;</span>
+      <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Hotremoving device type #{options[:subtype]} from partition #{self.name}&quot;</span>) 
+    <span class="ruby-keyword">else</span> 
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CustomError</span>, {<span class="ruby-value">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Error with dlpar type : must be add or remove&quot;</span> }
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">output</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">hmc</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">output</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/HSCL294D Dynamic remove of virtual I\/O resources failed/</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">output</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/The format of the configuration data is invalid./</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CustomError</span>, {<span class="ruby-value">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">output</span>, <span class="ruby-value">:command</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span> }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CustomError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">e</span>.<span class="ruby-identifier">handle</span>
+    <span class="ruby-comment">#exit 1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- dlpar-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- dlpar-method -->
+
+      
+        <div id="getlparconfig-method" class="method-detail ">
+          <a name="method-i-getlparconfig"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getlparconfig</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Return the <a href="Lpar.html">Lpar</a> configuration (not profile) as a
+hash of settings</p>
+            
+
+            
+            <div class="method-source-code" id="getlparconfig-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getlparconfig</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Getting LPAR configuration for #{self.name}&quot;</span>) 
+    <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;lssyscfg -r lpar -m #{@frame.name} --filter \&quot;lpar_names=#{self.name}\&quot;&quot;</span>
+    <span class="ruby-identifier">output</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">hmc</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>).<span class="ruby-identifier">chomp</span>()
+    <span class="ruby-identifier">config</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Common</span>.<span class="ruby-identifier">parse_profile</span>(<span class="ruby-identifier">output</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">config</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- getlparconfig-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getlparconfig-method -->
+
+      
+        <div id="getlparprofiles-method" class="method-detail ">
+          <a name="method-i-getlparprofiles"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getlparprofiles</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>will get all profiles for the lpar, returning an Array of :  Array = [
+{profiledata1},{profiledata2}]</p>
+            
+
+            
+            <div class="method-source-code" id="getlparprofiles-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getlparprofiles</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Getting all profiles for #{self.name}&quot;</span>) 
+    <span class="ruby-identifier">array_return</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;lssyscfg -r prof -m #{@frame.name} --filter \&quot;lpar_names=#{self.name}\&quot;&quot;</span>
+    <span class="ruby-identifier">output</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">hmc</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>).<span class="ruby-identifier">chomp</span>()
+    <span class="ruby-identifier">output</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">array_return</span>.<span class="ruby-identifier">push</span>(<span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Common</span>.<span class="ruby-identifier">parse_profile</span>(<span class="ruby-identifier">line</span>))
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">array_return</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- getlparprofiles-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getlparprofiles-method -->
+
+      
+        <div id="getmappings-method" class="method-detail ">
+          <a name="method-i-getmappings"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getmappings</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return a list of vscsi mappings for this lpar.</p>
+            
+
+            
+            <div class="method-source-code" id="getmappings-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getmappings</span>
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Getting all vscsi mappings for #{self.name}&quot;</span>) 
+  <span class="ruby-comment">## will fetch mappings for lpar objlpar</span>
+  <span class="ruby-identifier">vscsiline</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">profile</span>[<span class="ruby-value">:virtual_scsi_adapters</span>] 
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">vscsiline</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;none&quot;</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">vscsiline</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;No vscsi mappings for #{self.name}&quot;</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">parsedvscsiline</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Common</span>.<span class="ruby-identifier">parse_virtual_line</span>(<span class="ruby-identifier">vscsiline</span>)
+  <span class="ruby-identifier">parsedvscsiline</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">vioid</span> = <span class="ruby-identifier">parsedvscsiline</span>[<span class="ruby-identifier">index</span>][<span class="ruby-value">:vioserverid</span>]
+    <span class="ruby-identifier">said</span> = <span class="ruby-identifier">parsedvscsiline</span>[<span class="ruby-identifier">index</span>][<span class="ruby-value">:serveradapterid</span>]
+    <span class="ruby-identifier">objvio</span> =  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">vioservers</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">vioid</span>}.<span class="ruby-identifier">flatten</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-identifier">devname</span> = <span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">getvadaptername</span>(<span class="ruby-identifier">said</span>) 
+    <span class="ruby-identifier">parsedvscsiline</span>[<span class="ruby-identifier">index</span>][<span class="ruby-value">:devname</span>] = <span class="ruby-identifier">devname</span>
+    <span class="ruby-identifier">mappings</span> = <span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">mappings</span>(<span class="ruby-identifier">devname</span>)
+    <span class="ruby-identifier">parsedvscsiline</span>[<span class="ruby-identifier">index</span>][<span class="ruby-value">:mappings</span>] = <span class="ruby-identifier">mappings</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">parsedvscsiline</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- getmappings-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getmappings-method -->
+
+      
+        <div id="getstate-method" class="method-detail ">
+          <a name="method-i-getstate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getstate</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return the lpar status.</p>
+            
+
+            
+            <div class="method-source-code" id="getstate-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 219</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getstate</span>()
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Getting status for #{self.name}&quot;</span>) 
+  <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;lssyscfg -r lpar -m #{self.frame.name} -F state --filter lpar_names=#{self.name}&quot;</span>
+  <span class="ruby-identifier">output</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">hmc</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>).<span class="ruby-identifier">chomp</span>()
+  <span class="ruby-identifier">output</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- getstate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getstate-method -->
+
+      
+        <div id="getvfcmappings-method" class="method-detail ">
+          <a name="method-i-getvfcmappings"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getvfcmappings</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>return a list of vfc mappings for this lpar</p>
+            
+
+            
+            <div class="method-source-code" id="getvfcmappings-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getvfcmappings</span>
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Getting all vfc mappings for #{self.name}&quot;</span>) 
+  <span class="ruby-identifier">vfcline</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">profile</span>[<span class="ruby-value">:virtual_fc_adapters</span>] 
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">vfcline</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;none&quot;</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">vfcline</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;No vfc mappings for #{self.name}&quot;</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">parsedvfcline</span> = <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Common</span>.<span class="ruby-identifier">parse_virtualfc_line</span>(<span class="ruby-identifier">vfcline</span>)
+  <span class="ruby-identifier">parsedvfcline</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">vioid</span> = <span class="ruby-identifier">parsedvfcline</span>[<span class="ruby-identifier">index</span>][<span class="ruby-value">:vioserverid</span>]
+    <span class="ruby-identifier">said</span> = <span class="ruby-identifier">parsedvfcline</span>[<span class="ruby-identifier">index</span>][<span class="ruby-value">:serveradapterid</span>]
+    <span class="ruby-identifier">objvio</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">vioservers</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">vioid</span>}.<span class="ruby-identifier">flatten</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-identifier">devname</span> = <span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">getvadaptername</span>(<span class="ruby-identifier">said</span>)
+    <span class="ruby-identifier">mappings</span> = <span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">getvfcmap</span>(<span class="ruby-identifier">devname</span>)
+    <span class="ruby-identifier">parsedvfcline</span>[<span class="ruby-identifier">index</span>][<span class="ruby-value">:devname</span>] = <span class="ruby-identifier">devname</span>
+    <span class="ruby-identifier">parsedvfcline</span>[<span class="ruby-identifier">index</span>][<span class="ruby-value">:fcmap</span>] = <span class="ruby-identifier">mappings</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">parsedvfcline</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- getvfcmappings-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getvfcmappings-method -->
+
+      
+        <div id="getvioadaptersnames-method" class="method-detail ">
+          <a name="method-i-getvioadaptersnames"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getvioadaptersnames</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Will create and return a Hash of Hashes of the vadapters names on the vio
+server</p>
+            
+
+            
+            <div class="method-source-code" id="getvioadaptersnames-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 234</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getvioadaptersnames</span>()
+  <span class="ruby-comment">## we will try to get the vio server adapter names for our client devices</span>
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Getting Adapter names on VIO for #{self.name}&quot;</span>) 
+  <span class="ruby-identifier">lines</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">profile</span>[<span class="ruby-value">:virtual_scsi_adapters</span>]
+    <span class="ruby-identifier">lines</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">profile</span>[<span class="ruby-value">:virtual_scsi_adapters</span>] <span class="ruby-operator">+</span> <span class="ruby-string">&quot;,&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">profile</span>[<span class="ruby-value">:virtual_fc_adapters</span>]
+    <span class="ruby-identifier">lines</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">profile</span>[<span class="ruby-value">:virtual_fc_adapters</span>] <span class="ruby-operator">+</span> <span class="ruby-string">&quot;,&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">hash</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;,&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> 
+    <span class="ruby-identifier">device</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>)
+    <span class="ruby-identifier">objvio</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">vioserver</span>(<span class="ruby-identifier">device</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">to_i</span>)
+    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">id</span>] = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">id</span>)
+    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">id</span>].<span class="ruby-identifier">push</span>([<span class="ruby-identifier">device</span>[<span class="ruby-value">4</span>].<span class="ruby-identifier">to_i</span>,<span class="ruby-identifier">objvio</span>.<span class="ruby-identifier">getvadaptername</span>(<span class="ruby-identifier">device</span>[<span class="ruby-value">4</span>].<span class="ruby-identifier">to_i</span>)])
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- getvioadaptersnames-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getvioadaptersnames-method -->
+
+      
+        <div id="net_boot-method" class="method-detail ">
+          <a name="method-i-net_boot"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">net_boot</span><span
+              class="method-args">(options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>will initiate a <a href="Lpar.html#method-i-net_boot">net_boot</a> along
+with the specified options :  { :ip =&gt; ‘192.168.10.16’,</p>
+
+<pre>:netmask =&gt; '255.255.255.0',
+:gateway =&gt; '192.168.10.1',
+:server =&gt; '192.168.11.3' }</pre>
+            
+
+            
+            <div class="method-source-code" id="net_boot-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">net_boot</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-comment">## Check options : </span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:ip</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:netmask</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:gateway</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:server</span>].<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CustomError</span>, {<span class="ruby-value">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Some options aren't set. Exit 1.&quot;</span> }
+    <span class="ruby-keyword">end</span>    
+    <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;lpar_netboot -f -T off -t ent -s auto -d auto -D -K #{options[:netmask]} -G #{options[:gateway]} -S #{options[:server]} -C #{options[:ip]} #{self.name} #{self.profilename} #{self.frame.name}&quot;</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">hmc</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CustomError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">e</span>.<span class="ruby-identifier">handle</span>
+      <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- net_boot-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- net_boot-method -->
+
+      
+        <div id="power-method" class="method-detail ">
+          <a name="method-i-power"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">power</span><span
+              class="method-args">(options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Will initate a Power Operation for this lpar with the specified options : 
+{ :action =&gt; “poweron” | “poweroff”,</p>
+
+<pre>:restart =&gt; Bool. True | False,
+:immed =&gt; Bool. True | False,
+:os =&gt; Bool. True | False}</pre>
+            
+
+            
+            <div class="method-source-code" id="power-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">power</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-comment">## will power on/off system or not and immed</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;chsysstate -m #{self.frame.name} --id #{self.id}&quot;</span> 
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:action</span>] 
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;poweroff&quot;</span>
+        <span class="ruby-identifier">cstate</span> = <span class="ruby-identifier">getstate</span>()
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">cstate</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Not Activated&quot;</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">PowerStateError</span>, {<span class="ruby-value">:state</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Running | Open Firmware&quot;</span>, <span class="ruby-value">:cstate</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">cstate</span>, <span class="ruby-value">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span> }
+        <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:os</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span> 
+          <span class="ruby-identifier">command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; -o osshutdown -r lpar&quot;</span>       
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; -o shutdown -r lpar&quot;</span> 
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:restart</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+          <span class="ruby-identifier">command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; --restart&quot;</span>
+        <span class="ruby-keyword">end</span> 
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:immed</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+          <span class="ruby-identifier">command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; --immed&quot;</span>
+        <span class="ruby-keyword">end</span> 
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;poweron&quot;</span>
+        <span class="ruby-identifier">cstate</span> = <span class="ruby-identifier">getstate</span>()
+        <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">cstate</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Not Activated&quot;</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">PowerStateError</span>, {<span class="ruby-value">:state</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Not Activated&quot;</span>, <span class="ruby-value">:cstate</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">cstate</span>, <span class="ruby-value">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span> }
+        <span class="ruby-keyword">end</span> 
+        <span class="ruby-identifier">command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; -o on -r lpar&quot;</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">config</span>[<span class="ruby-value">:curr_profile</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
+          <span class="ruby-identifier">command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; -f #{self.config[:default_profile]}&quot;</span>
+        <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Changing power status for #{self.name}&quot;</span>) 
+    <span class="ruby-identifier">output</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">hmc</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">output</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/An invalid parameter value was entered/</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">output</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/HSCL/</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CustomError</span>, {<span class="ruby-value">:message</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">output</span>, <span class="ruby-value">:command</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">command</span>}
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">PowerStateError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">e</span>.<span class="ruby-identifier">handle</span>
+    <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CustomError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">e</span>.<span class="ruby-identifier">handle</span>
+    <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- power-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- power-method -->
+
+      
+        <div id="save_profile-method" class="method-detail ">
+          <a name="method-i-save_profile"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">save_profile</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Save the running profile to the current profile.</p>
+            
+
+            
+            <div class="method-source-code" id="save_profile-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">save_profile</span>()
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Saving running profile for #{self.name}&quot;</span>) 
+  <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;mksyscfg -r prof -m #{self.frame.name} -o save --id #{self.id} -n $(lssyscfg -r lpar -m #{self.frame.name} --filter \\\&quot;lpar_ids=#{self.id}\\\&quot; -F curr_profile) --force&quot;</span>
+  <span class="ruby-identifier">output</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frame</span>.<span class="ruby-identifier">hmc</span>.<span class="ruby-identifier">run_command</span>(<span class="ruby-identifier">command</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- save_profile-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- save_profile-method -->
+
+      
+        <div id="setframe-method" class="method-detail ">
+          <a name="method-i-setframe"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">setframe</span><span
+              class="method-args">(objframe)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Set the frame objframe to this object. Can be use to update a lpar object
+at creation time (self.create())</p>
+            
+
+            
+            <div class="method-source-code" id="setframe-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setframe</span>(<span class="ruby-identifier">objframe</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-ivar">@frame</span> = <span class="ruby-identifier">objframe</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@frame</span>.<span class="ruby-identifier">debug</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+      <span class="ruby-ivar">@debug</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
+    <span class="ruby-keyword">end</span>     
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">objframe</span>.<span class="ruby-identifier">lparexists?</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span>)
+      <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Updating Objects #{self.name} settings&quot;</span>)
+      <span class="ruby-ivar">@config</span> = <span class="ruby-identifier">getlparconfig</span>
+      <span class="ruby-ivar">@id</span> = <span class="ruby-ivar">@config</span>[<span class="ruby-value">:lpar_id</span>].<span class="ruby-identifier">to_i</span>
+      <span class="ruby-ivar">@profiles</span> = <span class="ruby-identifier">getlparprofiles</span>
+      <span class="ruby-identifier">default_profile</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">config</span>[<span class="ruby-value">:curr_profile</span>]
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">default_profile</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-identifier">default_profile</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">config</span>[<span class="ruby-value">:default_profile</span>]
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-ivar">@profile</span> = <span class="ruby-ivar">@profiles</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">default_profile</span> }.<span class="ruby-identifier">flatten</span>[<span class="ruby-value">0</span>] 
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">PowerVMTools</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CustomError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">e</span>.<span class="ruby-identifier">handle</span>
+    <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- setframe-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- setframe-method -->
+
+      
+        <div id="setsettings-method" class="method-detail ">
+          <a name="method-i-setsettings"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">setsettings</span><span
+              class="method-args">(options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Set the settings for the lpar creation.</p>
+            
+
+            
+            <div class="method-source-code" id="setsettings-source">
+<pre>
+<span class="ruby-comment"># File lib/lpar.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setsettings</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@log</span>.<span class="ruby-identifier">debug</span>(<span class="ruby-node">&quot;Setting creation settings for #{self.name}&quot;</span>) 
+  <span class="ruby-comment">### register settings </span>
+  <span class="ruby-ivar">@createsettings</span> = <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- setsettings-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- setsettings-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: PowerVMTools::Common</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/common_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/common.rb">lib/common.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-parse_profile">::parse_profile</a></li>
+          
+          <li><a href="#method-c-parse_virtual_line">::parse_virtual_line</a></li>
+          
+          <li><a href="#method-c-parse_virtualfc_line">::parse_virtualfc_line</a></li>
+          
+          <li><a href="#method-c-testlink">::testlink</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../LICENSE.html">LICENSE</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../PowerVMTools.html">PowerVMTools</a></li>
+        
+          <li><a href="../PowerVMTools/Common.html">PowerVMTools::Common</a></li>
+        
+          <li><a href="../PowerVMTools/Error.html">PowerVMTools::Error</a></li>
+        
+          <li><a href="../PowerVMTools/Error/CustomError.html">PowerVMTools::Error::CustomError</a></li>
+        
+          <li><a href="../PowerVMTools/Error/PowerStateError.html">PowerVMTools::Error::PowerStateError</a></li>
+        
+          <li><a href="../PowerVMTools/Frame.html">PowerVMTools::Frame</a></li>
+        
+          <li><a href="../PowerVMTools/HMC.html">PowerVMTools::HMC</a></li>
+        
+          <li><a href="../PowerVMTools/Lpar.html">PowerVMTools::Lpar</a></li>
+        
+          <li><a href="../PowerVMTools/NIM.html">PowerVMTools::NIM</a></li>
+        
+          <li><a href="../PowerVMTools/Vios.html">PowerVMTools::Vios</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">PowerVMTools::Common</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="parse_profile-method" class="method-detail ">
+          <a name="method-c-parse_profile"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">parse_profile</span><span
+              class="method-args">(data)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="parse_profile-source">
+<pre>
+<span class="ruby-comment"># File lib/common.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parse_profile</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment">#parse a string composed of key=value separated by commas</span>
+  <span class="ruby-comment">#it returns a hash of k,v</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-identifier">hash_of_keys</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-comment">### Frist of all, let's clean and remove all the \n inside the string :</span>
+  <span class="ruby-identifier">array</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-string">&quot;,&quot;</span>,<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">split</span>
+  <span class="ruby-identifier">setroot</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">array</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">setroot</span> = <span class="ruby-identifier">index</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">array</span>[<span class="ruby-identifier">index</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/=/</span>
+    <span class="ruby-identifier">array</span>[<span class="ruby-identifier">setroot</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;,#{array[index]}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">array</span>[<span class="ruby-identifier">index</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/=/</span>
+    <span class="ruby-identifier">array</span>[<span class="ruby-identifier">index</span>] = <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">array</span>[<span class="ruby-identifier">index</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/=/</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">nil?</span>}.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">key</span>,<span class="ruby-identifier">value</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;=&quot;</span>); <span class="ruby-identifier">value</span> = <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>;  <span class="ruby-identifier">hash_of_keys</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;\\&quot;</span>).<span class="ruby-identifier">delete</span>(<span class="ruby-string">'&quot;'</span>).<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;\\&quot;</span>).<span class="ruby-identifier">delete</span>(<span class="ruby-string">'&quot;'</span>) }
+  <span class="ruby-comment">### little extra, let's update the virtual_fc_adapters to replace the comma between the two wwn by a / it will be easier to handle in the futur</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">hash_of_keys</span>[<span class="ruby-value">:virtual_fc_adapters</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">hash_of_keys</span>[<span class="ruby-value">:virtual_fc_adapters</span>].<span class="ruby-identifier">match</span>(<span class="ruby-regexp">/[[:xdigit:]]{16},[[:xdigit:]]{16}/</span>)
+    <span class="ruby-identifier">hash_of_keys</span>[<span class="ruby-value">:virtual_fc_adapters</span>].<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/([[:xdigit:]]{16}),([[:xdigit:]]{16})/</span>,<span class="ruby-string">'\1'</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-string">'\2'</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">hash_of_keys</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- parse_profile-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parse_profile-method -->
+
+      
+        <div id="parse_virtual_line-method" class="method-detail ">
+          <a name="method-c-parse_virtual_line"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">parse_virtual_line</span><span
+              class="method-args">(line)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="parse_virtual_line-source">
+<pre>
+<span class="ruby-comment"># File lib/common.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parse_virtual_line</span>(<span class="ruby-identifier">line</span>)
+  <span class="ruby-comment">### this function will take a profile virtual line as arg </span>
+  <span class="ruby-comment">## &quot;20/client/1/viosrv1/2/0,21/client/2/viosrv1/7/0,22/client/1/viosrv2/3/0,23/client/2/viosrv2/8/0&quot;</span>
+  <span class="ruby-comment">## and will return an array of hashes : </span>
+  <span class="ruby-comment">## {:clientadapterid =&gt; 20, </span>
+  <span class="ruby-comment">##  :serveradapterid =&gt; 2, </span>
+  <span class="ruby-comment">##  :vioserverid =&gt;1, </span>
+  <span class="ruby-comment">##  :vdevname =&gt; vhost1,</span>
+  <span class="ruby-comment">##  :mappings =&gt; { &quot;to be defined&quot; }}</span>
+  <span class="ruby-identifier">return_array</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;,&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">vscsi</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">array_info</span> = <span class="ruby-identifier">vscsi</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>) <span class="ruby-comment">## spliting into a array the vscsi line</span>
+    <span class="ruby-identifier">clientadapterid</span> = <span class="ruby-identifier">array_info</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">serveradapterid</span> = <span class="ruby-identifier">array_info</span>[<span class="ruby-value">4</span>].<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">vioserverid</span> = <span class="ruby-identifier">array_info</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">return_array</span>.<span class="ruby-identifier">push</span>({<span class="ruby-value">:clientadapterid</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">clientadapterid</span>, <span class="ruby-value">:serveradapterid</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">serveradapterid</span>, <span class="ruby-value">:vioserverid</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">vioserverid</span> })
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">return_array</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- parse_virtual_line-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parse_virtual_line-method -->
+
+      
+        <div id="parse_virtualfc_line-method" class="method-detail ">
+          <a name="method-c-parse_virtualfc_line"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">parse_virtualfc_line</span><span
+              class="method-args">(line)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="parse_virtualfc_line-source">
+<pre>
+<span class="ruby-comment"># File lib/common.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parse_virtualfc_line</span>(<span class="ruby-identifier">line</span>)
+  <span class="ruby-comment">### this function will take a profile virtual fc line as arg </span>
+  <span class="ruby-comment">## &quot;30/client/1/viosrv1/7/c050760848060000/c050760848060001/0,31/client/2/viosrv2/9/c050760848060002/c050760848060003/0&quot;</span>
+  <span class="ruby-comment">## and will return an array of hashes : </span>
+  <span class="ruby-comment">## {:clientadapterid =&gt; 30, </span>
+  <span class="ruby-comment">##  :serveradapterid =&gt; 7, </span>
+  <span class="ruby-comment">##  :vioserverid =&gt;1, </span>
+  <span class="ruby-comment">##  :wwn1 =&gt; &quot;c050760848060000&quot;, </span>
+  <span class="ruby-comment">##  :wwn2 =&gt; &quot;c050760848060001&quot;</span>
+  <span class="ruby-comment">## }</span>
+  <span class="ruby-identifier">return_array</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;,&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">vfc</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">array_info</span> = <span class="ruby-identifier">vfc</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>) <span class="ruby-comment">## spliting into a array the vfc line</span>
+    <span class="ruby-identifier">clientadapterid</span> = <span class="ruby-identifier">array_info</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">serveradapterid</span> = <span class="ruby-identifier">array_info</span>[<span class="ruby-value">4</span>].<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">vioserverid</span> = <span class="ruby-identifier">array_info</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">return_array</span>.<span class="ruby-identifier">push</span>({<span class="ruby-value">:clientadapterid</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">clientadapterid</span>, <span class="ruby-value">:serveradapterid</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">serveradapterid</span>, <span class="ruby-value">:vioserverid</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">vioserverid</span>, <span class="ruby-value">:wwn1</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_info</span>[<span class="ruby-value">5</span>], <span class="ruby-value">:wwn2</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">array_info</span>[<span class="ruby-value">6</span>]})
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">return_array</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- parse_virtualfc_line-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parse_virtualfc_line-method -->
+
+      
+        <div id="testlink-method" class="method-detail ">
+          <a name="method-c-testlink"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">testlink</span><span
+              class="method-args">(host,user,pass,options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="testlink-source">
+<pre>
+<span class="ruby-comment"># File lib/common.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">testlink</span>(<span class="ruby-identifier">host</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">pass</span>,<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">port</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:port</span>] <span class="ruby-operator">||</span> <span class="ruby-value">22</span>
+    <span class="ruby-identifier">command</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:cmd</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;who&quot;</span>
+    <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">SSH</span>.<span class="ruby-identifier">start</span>( <span class="ruby-identifier">host</span>, <span class="ruby-identifier">user</span>, {<span class="ruby-value">:password</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">pass</span>, <span class="ruby-value">:port</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">port</span>}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ssh</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">dummy_result</span> = <span class="ruby-identifier">ssh</span>.<span class="ruby-identifier">exec!</span>(<span class="ruby-identifier">command</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  Timed out connecting to #{options[:name]}&quot;</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EAFNOSUPPORT</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  SSH Link: #{options[:name]} unreachable - Address family not supported by protocol&quot;</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EHOSTUNREACH</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  SSH Link: #{options[:name]} unreachable&quot;</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ECONNREFUSED</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  SSH Link: #{options[:name]} Connection refused for #{options[:user]}&quot;</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">SSH</span><span class="ruby-operator">::</span><span class="ruby-constant">AuthenticationFailed</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  SSH Link: #{options[:name]} authentification failed for #{options[:user]}&quot;</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;main:#{e}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- testlink-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- testlink-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+
