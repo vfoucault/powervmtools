@@ -1,8 +1,6 @@
 # powervmtools
 
-Gem build status:
 
-[![Status](https://travis-ci.org/vfoucault/powervmtools.svg?branch=master)](https://travis-ci.org/vfoucault/powervmtools)
 
 > Ruby library used to work with **IBM Power Hypervisor.**
 > Tested on HMC v7r7.9 and VIOServer 2.2.3.4
